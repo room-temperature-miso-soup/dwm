@@ -126,13 +126,13 @@ static char *tagicons[][NUMTAGS] =
  * A traditional struct table looks like this:
  *    // class      instance  title  wintype  tags mask  isfloating  monitor
  *    { "Gimp",     NULL,     NULL,  NULL,    1 << 4,    0,          -1 },
- *    { "Firefox",  NULL,     NULL,  NULL,    1 << 7,    0,          -1 },
+ *    { "brave",  NULL,     NULL,  NULL,    1 << 7,    0,          -1 },
  *
  * The RULE macro has the default values set for each field allowing you to only
  * specify the values that are relevant for your rule, e.g.
  *
  *    RULE(.class = "Gimp", .tags = 1 << 4)
- *    RULE(.class = "Firefox", .tags = 1 << 7)
+ *    RULE(.class = "brave", .tags = 1 << 7)
  *
  * Refer to the Rule struct definition for the list of available fields depending on
  * the patches you enable.
@@ -149,8 +149,12 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "firefox", .tags = 2 ,.switchtag=1 )
+	RULE(.class = "brave", .tags = 2 ,.switchtag=1 )
 	RULE(.class = "wezterm", .tags = 1 ,.switchtag=1 )
+	RULE(.class = "discord", .tags = 4 ,.switchtag=1 )
+	RULE(.class = "protonvpn-app", .tags = 6 ,.switchtag=1 )
+	RULE(.class = "steam", .tags = 5 ,.switchtag=1 )
+	RULE(.class = "Counter Strike 2", .tags = 4 ,.switchtag=1 )
 };
 
 /* Bar rules allow you to configure what is shown where on the bar, as well as
@@ -207,11 +211,11 @@ static const char *dmenucmd[] = {
 	"-sf", selfgcolor,
 	NULL
 };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "wezterm", NULL };
 
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
 #define STATUSBAR "dwmblocks"
-#define BROWSER "firefox"
+#define BROWSER "brave"
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
