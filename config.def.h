@@ -221,7 +221,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_w,          spawn,                  {.v = (const char*[]){ BROWSER, NULL } } },
-	{ MODKEY,                       XK_e,          spawn,                  {.v = (const char*[]){ "wezterm","start","--","yazi",NULL } } },
+  { MODKEY,                       XK_e,          spawn,                  {.v = (const char*[]){ "wezterm", "-e", "yazi", NULL } } },
 	{ MODKEY,                       XK_b,          togglebar,              {0} },
 	{ MODKEY,                       XK_j,          focusstack,             {.i = +1 } },
 	{ MODKEY,                       XK_k,          focusstack,             {.i = -1 } },
