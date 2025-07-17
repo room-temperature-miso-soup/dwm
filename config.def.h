@@ -149,13 +149,12 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
 	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "brave", .tags = 2 ,.switchtag=1 )
-	RULE(.class = "wezterm", .tags = 1 ,.switchtag=1 )
-	RULE(.class = "discord", .tags = 4 ,.switchtag=1 )
-	RULE(.class = "protonvpn-app", .tags = 6 ,.switchtag=1 )
-	RULE(.class = "steam", .tags = 5 ,.switchtag=1 )
-	RULE(.class = "Counter Strike 2", .tags = 4 ,.switchtag=1 )
-};
+  RULE(.class = "Brave-browser", .tags = 2, .switchtag = 1)
+  RULE(.class = "wezterm", .tags = 1, .switchtag = 1)
+  RULE(.class = "discord", .tags = 4, .switchtag = 1)
+  RULE(.class = "protonvpn-app", .tags = 6, .switchtag = 1)
+  RULE(.class = "steam", .tags = 5, .switchtag = 1)
+  RULE(.class = "Counter Strike 2", .tags = 4, .switchtag = 1)};
 
 /* Bar rules allow you to configure what is shown where on the bar, as well as
  * introducing your own bar modules.
