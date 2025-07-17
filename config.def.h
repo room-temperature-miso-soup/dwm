@@ -154,7 +154,7 @@ static const Rule rules[] = {
   RULE(.class = "discord", .tags = 5, .switchtag = 1)
   RULE(.class = "Protonvpn-app", .tags = 6, .switchtag = 1)
   RULE(.class = "steam", .tags = 6, .switchtag = 1)
-  RULE(.class = "cs2", .tags = 4, .switchtag = 1)
+  RULE(.class = "cs2", .tags = 4, .switchtag = 1)};
 
 /* Bar rules allow you to configure what is shown where on the bar, as well as
  * introducing your own bar modules.
