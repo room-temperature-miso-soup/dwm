@@ -211,7 +211,6 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "wezterm", NULL };
-static const char *mutecmd[] = { "pamixer", "-t", ";", "pkill", "-RTMIN+10", "dwmblocks", NULL };
 
 /* PulseAudio volume control using pamixer and dwmblocks signal */
 static const char *upvol[]   = { "/bin/sh", "-c", "pamixer -i 5; pkill -RTMIN+10 dwmblocks", NULL };
