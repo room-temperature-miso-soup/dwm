@@ -1,5 +1,5 @@
 /* See LICENSE file for copyright and license details. */
-
+#include <X11/XF86keysym.h>
 /* Helper macros for spawning commands */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #define CMD(...)   { .v = (const char*[]){ __VA_ARGS__, NULL } }
@@ -211,6 +211,10 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "wezterm", NULL };
+static const char *mutecmd[] = { "pamixer", "-t", ";", "pkill", "-RTMIN+10", "dwmblocks", NULL };
+static const char *volupcmd[] = { "pamixer", "-i", "5", ";", "pkill", "-RTMIN+10", "dwmblocks", NULL };
+static const char *voldowncmd[] = { "pamixer", "-d", "5", ";", "pkill", "-RTMIN+10", "dwmblocks", NULL };
+static const char *touchpadtogglecmd[] = { "/path/to/your/touchpad_toggle_script.sh", NULL };
 
 /* This defines the name of the executable that handles the bar (used for signalling purposes) */
 #define STATUSBAR "dwmblocks"
@@ -218,6 +222,10 @@ static const char *termcmd[]  = { "wezterm", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
+	{ 0,                            XF86XK_AudioMute,        spawn,        {.v = mutecmd } },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,        {.v = voldowncmd } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn,        {.v = volupcmd } },
+	{ 0,                            XF86XK_TouchpadToggle,   spawn,        {.v = touchpadtogglecmd } },
 	{ MODKEY,                       XK_d,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
 	{ MODKEY,                       XK_w,          spawn,                  {.v = (const char*[]){ BROWSER, NULL } } },
