@@ -212,11 +212,15 @@ static const char *dmenucmd[] = {
 };
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *mutecmd[] = { "pamixer", "-t", ";", "pkill", "-RTMIN+10", "dwmblocks", NULL };
-static const char *volupcmd[] = { "pamixer", "-i", "5", ";", "pkill", "-RTMIN+10", "dwmblocks", NULL };
-static const char *voldowncmd[] = { "pamixer", "-d", "5", ";", "pkill", "-RTMIN+10", "dwmblocks", NULL };
-static const char *touchpadtogglecmd[] = { "/path/to/your/touchpad_toggle_script.sh", NULL };
 
-/* This defines the name of the executable that handles the bar (used for signalling purposes) */
+/* PulseAudio volume control using pamixer and dwmblocks signal */
+static const char *upvol[]   = { "/bin/sh", "-c", "pamixer -i 5; pkill -RTMIN+10 dwmblocks", NULL };
+static const char *downvol[] = { "/bin/sh", "-c", "pamixer -d 5; pkill -RTMIN+10 dwmblocks", NULL };
+static const char *mutevol[] = { "/bin/sh", "-c", "pamixer -t; pkill -RTMIN+10 dwmblocks", NULL };
+
+/* Your touchpad toggle command (if you still want it) */
+static const char *touchpadtogglecmd[] = { "~/.config/scripts/touchpad_toggle_script.sh", NULL };/* This defines the name of the executable that handles the bar (used for signalling purposes) */
+
 #define STATUSBAR "dwmblocks"
 #define BROWSER "brave"
 
