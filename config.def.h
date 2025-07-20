@@ -226,9 +226,9 @@ static const char *touchpadtogglecmd[] = { "~/.config/scripts/touchpad_toggle_sc
 
 static const Key keys[] = {
 	/* modifier                     key            function                argument */
-	{ 0,                            XF86XK_AudioMute,        spawn,        {.v = mutecmd } },
-	{ 0,                            XF86XK_AudioLowerVolume, spawn,        {.v = voldowncmd } },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn,        {.v = volupcmd } },
+	{ 0,                            XF86XK_AudioMute,        spawn,        {.v = mutevol } },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn,        {.v = downvol } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn,        {.v = upvol } },
 	{ 0,                            XF86XK_TouchpadToggle,   spawn,        {.v = touchpadtogglecmd } },
 	{ MODKEY,                       XK_d,          spawn,                  {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } },
